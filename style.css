@@ -1,0 +1,9 @@
+#spiritBtn, #graveBtn, #castleBtn, #totoroBtn, #mononokeBtn, #porcoBtn{
+    height: 300px;
+    width: 250px;
+    display:inline-flexbox;
+}
+
+body{
+    background-color: cadetblue;
+}
