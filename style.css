@@ -1,9 +1,23 @@
 #spiritBtn, #graveBtn, #castleBtn, #totoroBtn, #mononokeBtn, #porcoBtn{
     height: 300px;
     width: 250px;
-    display:inline-flexbox;
+    display:flexbox;
+    
 }
 
 body{
     background-color: cadetblue;
+}
+
+.infoHere p{
+    text-align: center;
+    
+}
+
+.infoHere h3{
+    text-align: center;
+}
+
+.infoHere{
+    border
 }

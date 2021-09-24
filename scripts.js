@@ -39,6 +39,10 @@ async function awayPlot(){
 }
 
 let spiritInfo = (gold) =>{
+
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
     let spiritPlot = document.createElement('p');
     spiritPlot.innerText =  `${gold.description}`
 
@@ -46,8 +50,8 @@ let spiritInfo = (gold) =>{
     let spiritTitle = document.createElement('h3')
     spiritTitle.innerText = `${gold.title}`
     
-    spirited.appendChild(spiritTitle);
-    spirited.appendChild(spiritPlot);
+    infoHere.appendChild(spiritTitle);
+    infoHere.appendChild(spiritPlot);
 }
 
   async function firefly(){
@@ -60,13 +64,17 @@ let spiritInfo = (gold) =>{
 
 let sadNess = (sad) => {
 
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
+
     let graveTitle = document.createElement('h3')
     graveTitle.innerText = `${sad.title}`
     let gravePlot = document.createElement('p')
     gravePlot.innerText = `${sad.description}`
 
-    grave.appendChild(graveTitle);
-    grave.appendChild(gravePlot);
+    infoHere.appendChild(graveTitle);
+    infoHere.appendChild(gravePlot);
 }
 
 async function theSky(){
@@ -78,13 +86,17 @@ async function theSky(){
 }
 
 let skyStuff = (sky) => {
+
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
      let castleTitle = document.createElement('h3')
     castleTitle.innerText = `${sky.title}`
     let castlePlot = document.createElement('p')
     castlePlot.innerText = `${sky.description}`
 
-    castle.appendChild(castleTitle);
-    castle.appendChild(castlePlot);
+    infoHere.appendChild(castleTitle);
+    infoHere.appendChild(castlePlot);
 }
 
 async function neighbor(){
@@ -96,13 +108,17 @@ async function neighbor(){
 }
 
 let tRo = (tRoStuff) => {
+
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
      let totoroTitle = document.createElement('h3')
     totoroTitle.innerText = `${tRoStuff.title}`
     let totoroPlot = document.createElement('p')
     totoroPlot.innerText = `${tRoStuff.description}`
 
-    totoro.appendChild(totoroTitle);
-    totoro.appendChild(totoroPlot);
+    infoHere.appendChild(totoroTitle);
+    infoHere.appendChild(totoroPlot);
 }
 
 async function princess(){
@@ -114,13 +130,17 @@ async function princess(){
 }
 
 let wolfGirl = (wolfStuff) => {
+
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
         let mononokeTitle = document.createElement('h3')
     mononokeTitle.innerText = `${wolfStuff.title}`
     let mononokePlot = document.createElement('p')
     mononokePlot.innerText = `${wolfStuff.description}`
 
-    mononoke.appendChild(mononokeTitle)
-    mononoke.appendChild(mononokePlot)
+    infoHere.appendChild(mononokeTitle)
+    infoHere.appendChild(mononokePlot)
 }
 
 async function rosso(){
@@ -134,7 +154,9 @@ async function rosso(){
 let porky =(anime) => {
     console.log(anime)
 
-    
+    while(infoHere.firstChild) {
+        infoHere.removeChild(infoHere.firstChild)
+    }
 
    
 
@@ -145,8 +167,8 @@ let porky =(anime) => {
     let porcoPlot = document.createElement('p')
     porcoPlot.innerText = `${anime.description}`
 
-    porco.appendChild(porcoTitle)
-    porco.appendChild(porcoPlot)
+    infoHere.appendChild(porcoTitle)
+    infoHere.appendChild(porcoPlot)
 
 
 
