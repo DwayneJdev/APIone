@@ -1,5 +1,5 @@
 let infoHere = document.querySelector('.infoHere')
-let spirit = document.getElementById('spiritBtn')
+
 let spirited= document.querySelector('.spirited')
 let castle = document.querySelector('.castle')
 let totoro = document.querySelector('.neighbor')
@@ -7,72 +7,143 @@ let mononoke = document.querySelector('.princess')
 let porco = document.querySelector('.porco')
 let grave = document.querySelector('.grave')
 
+let spirit = document.getElementById('spiritBtn')
+let graveBtn = document.getElementById('graveBtn')
+let castleBtn = document.getElementById('castleBtn')
+let totoroBtn = document.getElementById('totoroBtn')
+let mononokeBtn = document.getElementById('mononokeBtn')
+let porcoBtn = document.getElementById('porcoBtn')
+
 let baseURL = 'https://ghibliapi.herokuapp.com/films'
 
-spirit.addEventListener('click', gimmePlot)
+spirit.addEventListener('click', awayPlot)
+graveBtn.addEventListener('click', firefly)
+castleBtn.addEventListener('click', theSky)
+totoroBtn.addEventListener('click', neighbor)
+mononokeBtn.addEventListener('click', princess)
+porcoBtn.addEventListener('click', rosso)
 
-async function gimmePlot(){
-    const response = await fetch(baseURL);
-    console.log(response);
-    const json = await response.json();
-    movieInfo(json);
-}
+// async function gimmePlot(){
+//     const response = await fetch(baseURL);
+//     //console.log(response);
+//     const json = await response.json();
+//     movieInfo(json);
+//  }
 
 async function awayPlot(){
-    const response = await fetch(baseURL , dc2e6bd1-8156-4886-adff-b39e6043af0c)
+    const response = await fetch('https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c')
     console.log(response);
     const json = await response.json();
     console.log(json)
+    spiritInfo(json)
 }
 
-let movieInfo =(anime) => {
-    console.log(anime)
-    
+let spiritInfo = (gold) =>{
     let spiritPlot = document.createElement('p');
-    spiritPlot.innerText =  `${anime[10].description}`
+    spiritPlot.innerText =  `${gold.description}`
+
 
     let spiritTitle = document.createElement('h3')
-    spiritTitle.innerText = `${anime[10].title}`
+    spiritTitle.innerText = `${gold.title}`
     
     spirited.appendChild(spiritTitle);
     spirited.appendChild(spiritPlot);
+}
+
+  async function firefly(){
+    const responses = await fetch('https://ghibliapi.herokuapp.com/films/12cfb892-aac0-4c5b-94af-521852e46d6a')
+    console.log(responses);
+    const json = await responses.json();
+    console.log(json)
+    sadNess(json)
+}
+
+let sadNess = (sad) => {
 
     let graveTitle = document.createElement('h3')
-    graveTitle.innerText = `${anime[1].title}`
+    graveTitle.innerText = `${sad.title}`
     let gravePlot = document.createElement('p')
-    gravePlot.innerText = `${anime[1].description}`
+    gravePlot.innerText = `${sad.description}`
 
     grave.appendChild(graveTitle);
     grave.appendChild(gravePlot);
+}
 
-    let castleTitle = document.createElement('h3')
-    castleTitle.innerText = `${anime[0].title}`
+async function theSky(){
+    const responses = await fetch('https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe')
+    console.log(responses);
+    const json = await responses.json();
+    console.log(json)
+    skyStuff(json)
+}
+
+let skyStuff = (sky) => {
+     let castleTitle = document.createElement('h3')
+    castleTitle.innerText = `${sky.title}`
     let castlePlot = document.createElement('p')
-    castlePlot.innerText = `${anime[0].description}`
+    castlePlot.innerText = `${sky.description}`
 
     castle.appendChild(castleTitle);
     castle.appendChild(castlePlot);
+}
 
-    let totoroTitle = document.createElement('h3')
-    totoroTitle.innerText = `${anime[3].title}`
+async function neighbor(){
+    const responses = await fetch('https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49')
+    console.log(responses);
+    const json = await responses.json();
+    console.log(json)
+    tRo(json)
+}
+
+let tRo = (tRoStuff) => {
+     let totoroTitle = document.createElement('h3')
+    totoroTitle.innerText = `${tRoStuff.title}`
     let totoroPlot = document.createElement('p')
-    totoroPlot.innerText = `${anime[3].description}`
+    totoroPlot.innerText = `${tRoStuff.description}`
 
     totoro.appendChild(totoroTitle);
     totoro.appendChild(totoroPlot);
+}
 
-    let mononokeTitle = document.createElement('h3')
-    mononokeTitle.innerText = `${anime[8].title}`
+async function princess(){
+    const responses = await fetch('https://ghibliapi.herokuapp.com/films/0440483e-ca0e-4120-8c50-4c8cd9b965d6')
+    console.log(responses);
+    const json = await responses.json();
+    console.log(json)
+    wolfGirl(json)
+}
+
+let wolfGirl = (wolfStuff) => {
+        let mononokeTitle = document.createElement('h3')
+    mononokeTitle.innerText = `${wolfStuff.title}`
     let mononokePlot = document.createElement('p')
-    mononokePlot.innerText = `${anime[8].description}`
+    mononokePlot.innerText = `${wolfStuff.description}`
 
     mononoke.appendChild(mononokeTitle)
     mononoke.appendChild(mononokePlot)
+}
+
+async function rosso(){
+    const responses = await fetch('https://ghibliapi.herokuapp.com/films/ebbb6b7c-945c-41ee-a792-de0e43191bd8')
+    console.log(responses);
+    const json = await responses.json();
+    console.log(json)
+    porky(json)
+}
+
+let porky =(anime) => {
+    console.log(anime)
+
+    
+
+   
+
+
 
     let porcoTitle = document.createElement('h3')
-    porcoTitle.innerText = `${anime[6].title}`
+    porcoTitle.innerText = `${anime.title}`
     let porcoPlot = document.createElement('p')
-    porcoPlot.innerText = `${anime[6].description}`
+    porcoPlot.innerText = `${anime.description}`
 
     porco.appendChild(porcoTitle)
     porco.appendChild(porcoPlot)
